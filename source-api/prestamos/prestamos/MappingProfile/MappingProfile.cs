@@ -16,7 +16,7 @@ namespace prestamos
 
             #endregion
 
-            #region Others
+            #region PaymentMethod
 
             CreateMap<PaymentMethod, DropDownListViewModel>()
                 .ForMember(d => d.Id, x => x.MapFrom(s => s.Id))
@@ -24,21 +24,21 @@ namespace prestamos
 
             #endregion
 
-            #region Others
+            #region Term
 
             CreateMap<Term, DropDownListViewModel>()
                 .ForMember(d => d.Id, x => x.MapFrom(s => s.Id))
                 .ForMember(d => d.Text, x => x.MapFrom(s => s.Description));
 
             #endregion
-            #region Others
 
-            CreateMap<StandardEntity, DropDownListViewModel>()
+            #region Loan
+
+            CreateMap<Loan, DropDownListViewModel>()
                 .ForMember(d => d.Id, x => x.MapFrom(s => s.Id))
                 .ForMember(d => d.Text, x => x.MapFrom(s => s.Description));
 
             #endregion
-
         }
     }
 }

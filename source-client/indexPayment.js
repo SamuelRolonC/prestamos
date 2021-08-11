@@ -1,4 +1,30 @@
 document.addEventListener("DOMContentLoaded", function() {
+    let grid = new gridjs.Grid({
+        columns:  [ "Prestamo","Persona","Fecha de pago","Medio de pago", "Importe"
+            ,"Restante","Fecha" ],
+        data: () => {
+            return new Promise(resolve => {
+                setTimeout(() =>
+                resolve([
+                    ["Dirk", "dborkett0@com.com", "(646) 3432270", "Male"],
+                    ["Maryl", "mchampkins1@dailymail.co.uk", "(980) 3335235", "Female"],
+                    ["Stefan", "sbrawson2@smh.com.au", "(180) 3533257", "Male"],
+                    ["Stephanie", "scouronne4@storify.com", "(904) 5358792", "Female"],
+                    ["Emeline", "esooley5@cyberchimps.com", "(308) 6561908", "Female"],
+                    ["Gavra", "gkrout9@foxnews.com", "(383) 4909639", "Female"],
+                    ["Roxi", "rvillage1@businessweek.com", "(980) 3335235", "Male"],
+                    ["Jamey", "jsheringham0@rakuten.co.jp", "(773) 5233571", "Male"],
+                    ["Maye", "mambrosoni8@prweb.com", "(895) 9997017", "Female"]
+                ]), 2000);
+            });
+        },
+        search: true,
+        sort: true,
+        pagination: {
+            limit: 5
+        },        
+    }).render(document.getElementById("tablePayment"))
+
     getJSON();
 });
 

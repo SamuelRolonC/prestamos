@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestamos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="row">
+            <div class="col-md-6 loan">
+            </div>
+            <div class="col-md-6 loan-result">
+                <div class="row">
+                    <div class="col-md-4 col-separation">
+                        <label for="paid">Pagado</label>
+                        <input id="paid" type="number" readonly>
+                    </div>
+                    <div class="col-md-4 col-separation">
+                        <label for="balance">Restante</label>
+                        <input id="balance" type="number" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="tablePayment"></div>
+    </main>
+
+    <script src="https://unpkg.com/gridjs/dist/gridjs.production.min.js"></script>
+    <script src="./main.js"></script>
+    <script src="./indexPayment.js"></script>
+</body>
+</html>

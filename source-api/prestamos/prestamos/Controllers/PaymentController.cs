@@ -54,30 +54,21 @@ namespace prestamos.Controllers
                 };
                 var listPaymentMethodDdl = MapListTo<PaymentMethod, DropDownListViewModel>(listPaymentMethod);
             
-                var listTerm = new List<Term>
+                var listLoan = new List<Loan>
                 {
-                    new Term() { Id = 1, Description = "Enero" },
-                    new Term() { Id = 2, Description = "Febrero" },
-                    new Term() { Id = 3, Description = "Marzo" },
-                    new Term() { Id = 4, Description = "Abril" },
-                    new Term() { Id = 5, Description = "Mayo" },
-                    new Term() { Id = 6, Description = "Junio" },
-                    new Term() { Id = 7, Description = "Julio" },
-                    new Term() { Id = 8, Description = "Agosto" },
-                    new Term() { Id = 9, Description = "Septiembre" },
-                    new Term() { Id = 10, Description = "Octubre" },
-                    new Term() { Id = 11, Description = "Noviembre" },
-                    new Term() { Id = 12, Description = "Diciembre" },
+                    new Loan() { Id = 1, Description = "Griferia" },
+                    new Loan() { Id = 2, Description = "Spotify" },
+                    new Loan() { Id = 3, Description = "Supermercado" },
+                    new Loan() { Id = 4, Description = "Movistar" },
                 };
-                var listTermDdl = MapListTo<Term, DropDownListViewModel>(listTerm);
+                var listLoanDdl = MapListTo<Loan, DropDownListViewModel>(listLoan);
 
                 viewModel = new PaymentViewModel()
                 {
                     Payment = payment,
-                    ListLoan = null,
+                    ListLoan = listLoanDdl,
                     ListPeople = listPeopleDdl,
                     ListPaymentMethod = listPaymentMethodDdl,
-                    ListTerm = listTermDdl,
                     Paid = paid,
                     Balance = paid - payment.Amount,
                 };

@@ -1,7 +1,8 @@
 populateSelect = (selectId, optionsArray, emptyOption) => {
-    if (!Array.isArray(optionsArray)) {
-        console.log("Error. Attempt to populate select with a non-Array data.");
-        return;
+    let list = [{ "id": 0, "text": emptyOption.toString() }];
+
+    if (Array.isArray(optionsArray)) {
+        list = list.concat(optionsArray);
     }
     
     let selectElement = document.getElementById(selectId);
@@ -11,13 +12,11 @@ populateSelect = (selectId, optionsArray, emptyOption) => {
         return;
     }
 
-    optionsArray.unshift({ "id": 0, "text": emptyOption.toString() })
-    
-    for(let optionElement of optionsArray)
+    for(let item of list)
     {
         let opt = document.createElement("option");
-        opt.value = optionElement.id;
-        opt.innerHTML = optionElement.text;
+        opt.value = item.id;
+        opt.innerHTML = item.text;
 
         selectElement.appendChild(opt);
     }
@@ -25,12 +24,16 @@ populateSelect = (selectId, optionsArray, emptyOption) => {
 
 setValueInput = (inputId, text) => {
     let inputElement = document.getElementById(inputId);
-    inputElement.value = text;
+
+    if (inputElement)
+        inputElement.value = text;
 }
 
 setValueSelect = (selectId, value) => {
     let selectElement = document.getElementById(selectId);
-    selectElement.value = value;
+    
+    if (selectElement)
+        selectElement.value = value;
 }
 
 getDateForInput = (date) => {
