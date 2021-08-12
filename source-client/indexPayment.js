@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     let grid = new gridjs.Grid({
         columns:  [ "Prestamo","Persona","Fecha de pago","Medio de pago", "Importe"
-            ,"Restante","Fecha" ],
+            ,"Restante" ],
         data: () => {
             return new Promise(resolve => {
                 setTimeout(() =>

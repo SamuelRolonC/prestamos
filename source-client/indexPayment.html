@@ -11,19 +11,23 @@
 </head>
 <body>
     <main>
-        <div class="row">
-            <div class="col-md-6 loan">
-            </div>
-            <div class="col-md-6 loan-result">
-                <div class="row">
-                    <div class="col-md-4 col-separation">
-                        <label for="paid">Pagado</label>
-                        <input id="paid" type="number" readonly>
-                    </div>
-                    <div class="col-md-4 col-separation">
-                        <label for="balance">Restante</label>
-                        <input id="balance" type="number" readonly>
-                    </div>
+        <div class="filters">
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="loan">Prestamo</label>
+                    <select name="loan" id="loan"></select>
+                </div>
+                <div class="col-md-2">
+                    <label for="people">Persona</label>
+                    <select name="people" id="people"></select>
+                </div>
+                <div class="col-md-2">
+                    <label for="paymentDate">Fecha de pago</label>
+                    <input name="paymentDate" id="paymentDate" type="date">
+                </div>
+                <div class="col-md-2">
+                    <label for="paymentMethod">Medio de pago</label>
+                    <select name="paymentMethod" id="paymentMethod"></select>
                 </div>
             </div>
         </div>

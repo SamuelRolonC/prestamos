@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using AutoMapper;
+using Core.Interfaces.Services;
+using Services;
 
 namespace prestamos
 {
@@ -35,12 +37,18 @@ namespace prestamos
                        .AllowAnyHeader();
             }));
 
+            // Register Services
+            services.AddScoped<IPaymentService, PaymentService>();
+            services.AddScoped<IPaymentMethodService, PaymentMethodService>();
+            services.AddScoped<ILoanService, LoanService>();
+            services.AddScoped<IPeopleService, PeopleService>();
+            services.AddScoped<ITermService, TermService>();
+
             // Auto Mapper Configurations
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new MappingProfile());
             });
-
             IMapper mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
 

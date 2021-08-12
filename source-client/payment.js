@@ -17,7 +17,7 @@ setActionPayment = (form) => {
 
 getJSON = () => {
     let request = new XMLHttpRequest();
-    request.open('GET', 'https://localhost:44347/payment', true);
+    request.open('GET', 'https://localhost:44347/payment/0', true);
 
     request.onload = function() {
         if (request.status < 200 && request.status >= 300) {
